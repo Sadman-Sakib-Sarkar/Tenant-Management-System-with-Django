@@ -1,0 +1,28 @@
+{% extends "tenants/base.html" %}
+
+
+{% block content %}
+
+        <h1>Add Flat</h1>
+        <br>
+
+        <div class="container">
+            {% if submitted %}
+            
+                <div class="alert alert-success" role="alert">
+                    Flat has added!
+                </div>
+    
+            {% else %}
+    
+            <form action="" method="POST"> 
+                {% csrf_token %}
+                {{ form.as_p }}
+
+                <input type="submit" value="Submit" class="btn btn-secondary">
+            </form>
+        
+            {% endif %}
+        </div>
+
+{% endblock %}
